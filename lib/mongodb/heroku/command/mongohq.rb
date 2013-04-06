@@ -13,7 +13,7 @@ class Heroku::Command::Mongohq < Heroku::Command::Base
     uri = config_vars
     if uri && args[0]
       config = URI(uri)
-      system("mongorestore -h #{config.host} --port #{config.port} -u #{config.user} -p #{config.password} -d #{config.path.sub(/\A\//, '')} #{args[0]}")
+      system("mongorestore --drop -h #{config.host} --port #{config.port} -u #{config.user} -p #{config.password} -d #{config.path.sub(/\A\//, '')} #{args[0]}")
     end
   end
 
