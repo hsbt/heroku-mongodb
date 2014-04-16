@@ -1,19 +1,17 @@
-require 'uri'
-
 class Heroku::Command::Mongohq < Heroku::Command::Base
   def dump
     uri = config_vars
     if uri && args[0]
-      config = URI(uri)
-      system("mongodump -h #{config.host} --port #{config.port} -u #{config.user} -p #{config.password} -d #{config.path.sub(/\A\//, '')} -o #{args[0]}")
+      cmd = MongoCmd.new(uri)
+      system("#{cmd.mongodump} -o #{args[0]}")
     end
   end
 
   def restore
     uri = config_vars
     if uri && args[0]
-      config = URI(uri)
-      system("mongorestore --drop -h #{config.host} --port #{config.port} -u #{config.user} -p #{config.password} -d #{config.path.sub(/\A\//, '')} #{args[0]}")
+      cmd = MongoCmd.new(uri)
+      system("#{cmd.mongorestore} #{args[0]}")
     end
   end
 
