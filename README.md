@@ -5,23 +5,20 @@ tiny wrapper for mongodb
 ## Installation
 
 ```
-$ heroku plugins:install git://github.com/hsbt/heroku-mongodb.git
+$ heroku plugins:install git://github.com/dot/heroku-mongodb.git
 ```
 
 ## Usage
 
-### MongoHQ
+### Compose
 
 ```
-$ heroku mongohq:dump tmp/production
+$ heroku compose:dump --help
+Usage: heroku compose:dump
 
-$ heroku mongohq:restore tmp/production/app12345
-```
+mongodump for compose mongodb
 
-### MongoLab
-
-```
-$ heroku mongolab:dump tmp/production
-
-$ heroku mongolab:restore tmp/production/app12345
+ -a, --app APP       # app to run command against
+ -o, --output OUTPUT # destination for output
+ -r, --remote REMOTE # git remote of app to run command against
 ```
