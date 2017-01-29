@@ -1,0 +1,20 @@
+{
+  "name": "heroku-mongodb",
+  "version": "1.0.0",
+  "description": "tiny wrapper for mongodb",
+  "main": "index.js",
+  "author": "Shuhei KONDO @_dot",
+  "repository": "dot/heroku-mongodb",
+  "bugs": {
+    "url": "https://github.com/dot/heroku-mongodb/issues"
+  },
+  "keywords": [
+    "heroku-plugin"
+  ],
+  "license": "Apache2",
+  "dependencies": {
+    "co": "^4.6.0",
+    "heroku-cli-util": "^6.1.1",
+    "mongo-uri": "^0.1.2"
+  }
+}
